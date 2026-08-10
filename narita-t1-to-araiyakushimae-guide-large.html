@@ -1,0 +1,662 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0b4f86">
+  <title>成田 T1 → 新井药师前完整乘车指引｜全程电梯大字版</title>
+  <style>
+    :root{--blue:#0b4f86;--blue2:#e9f4ff;--red:#d92929;--orange:#f26b21;--ink:#17202a;--muted:#52606d;--line:#d8e1e8;--paper:#fff;--bg:#f4f7fa;--green:#0d7659;}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",Arial,sans-serif;font-size:18px;line-height:1.7}
+    a{color:var(--blue);text-decoration:underline;text-underline-offset:3px}
+    .wrap{max-width:780px;margin:0 auto;padding:0 16px 48px}
+    .hero{min-height:300px;margin:0 -16px 20px;padding:34px 24px 28px;display:flex;align-items:flex-end;background:linear-gradient(180deg,rgba(4,25,45,.18),rgba(4,25,45,.9)),url('assets/hero-north-wing.jpg') center 40%/cover;border-radius:0 0 28px 28px;color:#fff}
+    .hero h1{font-size:clamp(30px,7vw,52px);line-height:1.2;margin:0 0 12px;letter-spacing:.02em;text-shadow:0 2px 4px #000}
+    .hero p{margin:0;font-size:20px;font-weight:700}
+    .notice{background:#fff7d6;border:2px solid #f0bd32;border-radius:18px;padding:16px 18px;margin:18px 0;color:#543c00}
+    .notice strong{color:#9c1c1c}
+    .floor-explain{background:#eaf6ff;border:3px solid #6aabd8;border-radius:20px;padding:18px;margin:18px 0;color:#123e60}
+    .floor-explain > strong{display:block;font-size:27px;line-height:1.35;color:#0b4f86}
+    .floor-explain .floor-code{font-size:1.35em;font-weight:800;line-height:1;color:#0b4f86;margin-left:4px}
+    .floor-explain p{margin:8px 0 0}
+    .wallet-check{background:#f3fbf5;border:2px solid #71bf86;border-radius:16px;padding:14px 16px;margin:14px 0 6px;color:#165128;text-align:center}
+    .wallet-title{font-size:21px;font-weight:900}
+    .wallet-balance{display:inline-block;margin:8px 0;padding:5px 15px;border-radius:999px;background:#168443;color:#fff;font-size:25px;font-weight:900;line-height:1.25}
+    .wallet-warning{font-weight:800;color:#8a3b00}
+    .route{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:16px;margin:16px 0 22px;box-shadow:0 3px 12px rgba(17,45,70,.05)}
+    .route-title{margin:0 0 10px;font-weight:800;color:var(--blue)}
+    .route-line{display:flex;flex-wrap:wrap;align-items:center;gap:8px;font-weight:800}
+    .route-line span{background:var(--blue2);border-radius:10px;padding:6px 9px;line-height:1.35}
+    .route-line b{color:var(--red);font-size:25px}
+    .key-box{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:16px 0}
+    .key{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:12px 13px}
+    .key small{display:block;color:var(--muted);font-size:14px}
+    .key strong{display:block;font-size:20px;line-height:1.35}
+    .section-title{font-size:27px;line-height:1.3;margin:28px 0 12px;color:var(--blue)}
+    .step{background:var(--paper);border:1px solid var(--line);border-radius:20px;padding:18px;margin:16px 0;box-shadow:0 3px 12px rgba(17,45,70,.05)}
+    .step-head{display:flex;gap:12px;align-items:flex-start;margin-bottom:8px}
+    .num{flex:0 0 40px;height:40px;border-radius:50%;background:var(--red);color:#fff;display:grid;place-items:center;font-size:23px;font-weight:900;line-height:1}
+    .step h3{font-size:25px;line-height:1.35;margin:0;color:var(--ink)}
+    .step p{margin:8px 0}
+    .step ul{margin:8px 0 4px;padding-left:1.3em}
+    .step li{margin:5px 0}
+    .sign{display:inline-block;padding:2px 8px;border-radius:8px;font-weight:900;white-space:nowrap}
+    .sign.orange{background:#fff0e7;color:#a43b00;border:2px solid var(--orange)}
+    .sign.blue{background:#edf3ff;color:#1648a1;border:2px solid #4774cf}
+    .sign.red{background:#fff0f0;color:#a91717;border:2px solid var(--red)}
+    .sign.green{background:#eaf8f2;color:#075d47;border:2px solid var(--green)}
+    .visual{position:relative;overflow:hidden;border-radius:15px;background:#0b0d10;margin:14px 0 6px}
+    .visual img{display:block;width:100%;height:auto;max-height:480px;object-fit:cover}
+    .visual.arrival img{object-position:center 48%}
+    .visual.wide img{object-position:center center}
+    .visual svg{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+    .visual .tag{position:absolute;left:12px;top:12px;max-width:82%;padding:6px 10px;border-radius:10px;background:rgba(255,255,255,.94);color:var(--red);font-weight:900;line-height:1.35;box-shadow:0 2px 8px rgba(0,0,0,.25)}
+    .visual .tag.bottom{top:auto;bottom:12px;z-index:5}
+    .visual.wallet-tutorial{background:#f6f7f9;text-align:center}
+    .visual.wallet-tutorial img{width:auto;max-width:100%;height:auto;max-height:520px;margin:0 auto;object-fit:contain}
+    .visual .subtitle-replacement{position:absolute;z-index:6;left:20%;right:18%;bottom:10%;min-height:10%;display:grid;place-items:center;padding:5px 10px;border-radius:8px;background:rgba(0,0,0,.9);color:#fff;font-size:clamp(18px,3.5vw,32px);font-weight:900;line-height:1.25;text-align:center;text-shadow:0 1px 3px #000}
+    .visual.no-go::before,.visual.no-go::after{content:"";position:absolute;z-index:4;left:-18%;top:47%;width:136%;height:20px;background:rgba(220,20,20,.9);border:3px solid rgba(255,255,255,.95);box-shadow:0 1px 7px rgba(0,0,0,.4);transform:rotate(31deg);pointer-events:none}
+    .visual.no-go::after{transform:rotate(-31deg)}
+    .caption{font-size:14px;color:var(--muted);margin:0 0 4px}
+    .branch{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:18px 0}
+    .branch>div{border-radius:16px;padding:14px;background:#f4fbff;border:2px solid #c8e3f6}
+    .branch>div:last-child{background:#fffaf0;border-color:#f2d590}
+    .branch strong{display:block;font-size:20px;margin-bottom:4px}
+    .dont{background:#fff0f0;border:2px solid #ef7777;border-radius:18px;padding:15px 17px;margin:16px 0}
+    .dont h3{margin:0 0 5px;color:#9c1c1c;font-size:23px}
+    .phrase{background:#eff9f5;border:2px solid #7bc9b1;border-radius:18px;padding:16px;margin:18px 0}
+    .phrase .jp{font-size:23px;font-weight:800;line-height:1.45}
+    .ai-help{background:#f1f7ff;border:2px solid #86b6e6;border-radius:18px;padding:16px;margin:16px 0;color:#173f66}
+    .ai-help p{margin:0 0 12px}
+    .copy-prompt{background:#fff;border:1px solid #c8dcef;border-radius:13px;padding:12px}
+    .copy-prompt-title{font-weight:900;color:#0b4f86;margin-bottom:8px}
+    .copy-prompt textarea{display:block;width:100%;min-height:154px;padding:11px;border:1px solid #a9c6df;border-radius:10px;background:#fbfdff;color:#17202a;font:inherit;font-size:16px;line-height:1.55;resize:vertical}
+    .copy-row{display:flex;align-items:center;gap:10px;margin-top:10px}
+    .copy-btn{border:0;border-radius:10px;padding:9px 14px;background:#0b4f86;color:#fff;font:inherit;font-weight:900;cursor:pointer}
+    .copy-btn:focus-visible{outline:3px solid #f0bd32;outline-offset:2px}
+    .copy-status{font-size:15px;color:#35617f}
+    .mini-route{display:flex;align-items:center;gap:7px;flex-wrap:wrap;margin:10px 0 0;font-weight:800}
+    .mini-route .dot{border-radius:50%;background:var(--blue);color:#fff;min-width:31px;height:31px;display:grid;place-items:center}
+    .mini-route b{color:var(--red);font-size:22px}
+    .source-list{font-size:15px;color:var(--muted);padding-left:1.2em}
+    .source-list li{margin:5px 0}
+    .credit-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
+    .credit{border:1px solid var(--line);background:#fff;border-radius:12px;padding:10px;font-size:14px;line-height:1.45}
+    .footer{border-top:1px solid var(--line);margin-top:28px;padding-top:18px;color:var(--muted);font-size:14px}
+    .small{font-size:15px;color:var(--muted)}
+    .elevator-banner{background:linear-gradient(135deg,#e9fff7,#eaf4ff);border:3px solid #0d7659;border-radius:20px;padding:17px 18px;margin:18px 0;color:#083d31;box-shadow:0 3px 12px rgba(13,118,89,.09)}
+    .elevator-banner strong{display:block;font-size:25px;line-height:1.35;margin-bottom:5px;color:#075d47}
+    .station-break{margin:30px 0 14px;padding:18px;border-radius:20px;color:#fff;background:linear-gradient(135deg,#083f6f,#0b6f98);box-shadow:0 5px 18px rgba(8,63,111,.18)}
+    .station-break.seibu{background:linear-gradient(135deg,#125e4b,#0d7659)}
+    .station-break.arrival{background:linear-gradient(135deg,#7b2d18,#b84b25)}
+    .station-break small{display:block;font-weight:800;opacity:.88;letter-spacing:.06em}
+    .station-break h2{font-size:30px;line-height:1.25;margin:3px 0 7px}
+    .station-break p{margin:0;font-weight:700}
+    .elevator-chain{display:grid;gap:8px;margin:14px 0}
+    .elevator-chain .chain-row{display:grid;grid-template-columns:42px 1fr;gap:10px;align-items:center;background:#f5fbff;border:1px solid #b9d8ec;border-radius:13px;padding:10px 12px}
+    .elevator-chain .icon{width:38px;height:38px;border-radius:11px;display:grid;place-items:center;background:#0d7659;color:#fff;font-size:23px;font-weight:900}
+    .elevator-chain b{color:#0b4f86}
+    .luggage-tip{background:#f0fbf7;border-left:6px solid #0d7659;border-radius:10px;padding:11px 13px;margin:12px 0;color:#164b3e}
+    .flat-walk{background:#fff5e6;border:3px solid #ef9f32;border-radius:18px;padding:15px 16px;margin:14px 0;color:#65410c}
+    .flat-walk strong{color:#8a3b00;font-size:21px}
+    .video-card{background:#eef6ff;border:2px solid #9fc4e8;border-radius:18px;padding:14px;margin:16px 0}
+    .video-card h3{margin:0 0 8px;color:#0b4f86;font-size:22px}
+    .video-frame{position:relative;padding-top:56.25%;overflow:hidden;border-radius:13px;background:#0b0d10}
+    .video-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+    .video-warning{margin:9px 0 0;font-size:15px;color:#74420a;font-weight:700}
+    .route-recognition{display:grid;grid-template-columns:minmax(190px,auto) 1fr;gap:14px;align-items:center;background:#f6fbff;border:3px solid #74afd5;border-radius:17px;padding:14px;margin:14px 0}
+    .recognition-icons{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+    .recognition-logo{display:block;width:auto;height:44px;max-width:180px;object-fit:contain}
+    .recognition-icon{display:block;width:58px;height:58px;object-fit:contain}
+    .recognition-copy strong{display:block;font-size:24px;line-height:1.3;color:#0b4f86}
+    .recognition-copy small{display:block;color:#52606d;line-height:1.5}
+    .access-board{display:flex;align-items:center;gap:10px;background:#24282b;color:#fff;border:6px solid #f26b21;border-radius:8px;padding:10px 12px;line-height:1.1;font-weight:900}
+    .access-board .access-train-icon{display:block;width:70px;height:70px;object-fit:cover;flex:0 0 70px;border-radius:5px;background:#fff}
+    .access-board .access-label{font-size:20px}
+    .access-board .access-label small{display:block;font-size:14px;color:#fff}
+    .access-board .access-one{display:grid;place-items:center;width:54px;height:54px;background:#f26b21;color:#fff;font-size:38px}
+    .ok-mark{color:#16834a;font-weight:900;font-size:1.3em}
+    .bad-mark{color:#c82333;font-weight:900;font-size:1.3em}
+    .station-sign-detail{height:clamp(280px,52vw,440px);background:url('assets/tb-11-takadanobaba-platform2-commons.jpg') left 38%/250% auto no-repeat}
+    .error-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin:13px 0}
+    .error-grid div{background:#fff2f2;border:1px solid #efaaaa;border-radius:12px;padding:10px;color:#7f1717;font-weight:700}
+    .station-code{display:inline-block;border-radius:999px;padding:2px 9px;background:#fff;color:#0b4f86;font-weight:900;margin-left:5px}
+    @media(max-width:600px){body{font-size:18px}.wrap{padding-left:12px;padding-right:12px}.hero{margin-left:-12px;margin-right:-12px;padding-left:18px;padding-right:18px;min-height:270px}.key-box{grid-template-columns:1fr}.branch{grid-template-columns:1fr}.credit-grid{grid-template-columns:1fr}.error-grid{grid-template-columns:1fr}.step{padding:15px}.step h3{font-size:23px}.route-line span{font-size:17px}.visual .tag{font-size:16px}.station-break h2{font-size:26px}.route-recognition{grid-template-columns:1fr}.station-sign-detail{background-size:285% auto;background-position:left 38%}}
+
+    /* 独立大字版：说明文字移到图片下方，避免遮住路标。 */
+    body.large-text{font-size:24px;line-height:1.85}
+    body.large-text .wrap{max-width:920px;padding:0 22px 68px}
+    body.large-text .hero{min-height:350px;margin-left:-22px;margin-right:-22px;padding:44px 34px 38px}
+    body.large-text .hero h1{font-size:clamp(42px,8vw,66px)}
+    body.large-text .hero p{font-size:27px;line-height:1.45}
+    body.large-text .notice,body.large-text .elevator-banner{padding:20px 22px;font-size:24px}
+    body.large-text .elevator-banner strong{font-size:31px}
+    body.large-text .floor-explain{padding:22px}
+    body.large-text .floor-explain > strong{font-size:34px}
+    body.large-text .floor-explain .floor-code{font-size:1.5em}
+    body.large-text .wallet-check{padding:18px 20px}
+    body.large-text .wallet-title{font-size:27px}
+    body.large-text .wallet-balance{font-size:34px;padding:8px 18px}
+    body.large-text .wallet-warning{font-size:23px}
+    body.large-text .route{padding:21px}
+    body.large-text .route-title{font-size:25px}
+    body.large-text .route-line{gap:12px}
+    body.large-text .route-line span{padding:10px 13px;font-size:22px}
+    body.large-text .route-line b{font-size:30px}
+    body.large-text .key-box{grid-template-columns:1fr;gap:12px}
+    body.large-text .key{padding:16px 18px}
+    body.large-text .key small{font-size:18px}
+    body.large-text .key strong{font-size:26px}
+    body.large-text .section-title{font-size:35px;margin:34px 0 16px}
+    body.large-text .station-break{padding:23px;margin-top:38px}
+    body.large-text .station-break h2{font-size:38px}
+    body.large-text .station-break p{font-size:23px}
+    body.large-text .step{padding:24px;margin:22px 0}
+    body.large-text .step-head{gap:16px;margin-bottom:12px}
+    body.large-text .num{flex-basis:54px;width:54px;height:54px;font-size:31px}
+    body.large-text .step h3{font-size:32px}
+    body.large-text .step p{margin:13px 0}
+    body.large-text .step li{margin:9px 0}
+    body.large-text .sign{padding:4px 10px}
+    body.large-text .elevator-chain .chain-row{grid-template-columns:54px 1fr;padding:14px 16px}
+    body.large-text .elevator-chain .icon{width:50px;height:50px;font-size:29px}
+    body.large-text .luggage-tip,body.large-text .flat-walk{padding:16px 18px}
+    body.large-text .flat-walk strong{font-size:27px}
+    body.large-text .video-card{padding:19px}
+    body.large-text .video-card h3{font-size:29px}
+    body.large-text .video-warning{font-size:20px}
+    body.large-text .route-recognition{grid-template-columns:1fr;padding:18px}
+    body.large-text .recognition-copy strong{font-size:30px}
+    body.large-text .recognition-copy small{font-size:21px}
+    body.large-text .recognition-logo{height:55px}
+    body.large-text .recognition-icon{width:70px;height:70px}
+    body.large-text .access-board .access-train-icon{width:82px;height:82px;flex-basis:82px}
+    body.large-text .access-board .access-label{font-size:27px}
+    body.large-text .access-board .access-label small{font-size:20px}
+    body.large-text .source-caption{display:none}
+    body.large-text .visual{margin:18px 0 10px}
+    body.large-text .visual > .tag{visibility:hidden}
+    body.large-text .large-caption{display:block;position:static;max-width:none;margin:10px 0 22px;padding:12px 16px;border:3px solid #d92929;border-radius:13px;background:#fff;color:#b32424;font-size:22px;font-weight:900;line-height:1.5;box-shadow:none}
+    body.large-text .caption,body.large-text .small{font-size:20px;line-height:1.65}
+    body.large-text .branch{grid-template-columns:1fr;gap:16px}
+    body.large-text .branch>div{padding:18px}
+    body.large-text .branch strong{font-size:26px}
+    body.large-text .dont{padding:20px}
+    body.large-text .dont h3{font-size:29px}
+    body.large-text .phrase{padding:20px}
+    body.large-text .phrase .jp{font-size:29px}
+    body.large-text .ai-help{padding:20px}
+    body.large-text .copy-prompt{padding:16px}
+    body.large-text .copy-prompt-title{font-size:23px}
+    body.large-text .copy-prompt textarea{min-height:220px;font-size:21px;line-height:1.6}
+    body.large-text .copy-btn{padding:12px 18px;font-size:23px}
+    body.large-text .copy-status{font-size:19px}
+    body.large-text .mini-route{gap:10px}
+    body.large-text .mini-route .dot{min-width:40px;height:40px;font-size:22px;padding:0 7px}
+    body.large-text .mini-route b{font-size:28px}
+    body.large-text .source-list{font-size:19px}
+    body.large-text .credit-grid{grid-template-columns:1fr}
+    body.large-text .credit{padding:14px;font-size:18px}
+    body.large-text .footer{font-size:18px}
+    @media(max-width:600px){body.large-text{font-size:22px}body.large-text .wrap{padding-left:14px;padding-right:14px}body.large-text .hero{margin-left:-14px;margin-right:-14px;padding-left:22px;padding-right:22px;min-height:330px}body.large-text .hero h1{font-size:42px}body.large-text .hero p{font-size:24px}body.large-text .step{padding:20px}body.large-text .step h3{font-size:29px}body.large-text .large-caption{margin:9px 0 20px;padding:11px 14px;font-size:20px}body.large-text .station-break h2{font-size:31px}}
+  </style>
+</head>
+<body class="large-text">
+  <div class="wrap">
+    <header class="hero">
+      <div>
+        <h1>成田 T1 → 新井药师前</h1>
+        <p>从入境大厅到出站的完整攻略｜行李箱全程电梯 · 大字版</p>
+      </div>
+    </header>
+
+    <div class="notice">
+      <strong>行李箱路线的总原则：</strong>从成田 T1 到新井药师前可以全程不走楼梯、也不走扶梯。只认<strong>方框内有人和上下箭头的电梯图标</strong>；宁可多走一点平路、等下一班车，也不要拖箱赶路。若电梯临停，直接把本页的日语给站员看，不要勉强搬行李。
+    </div>
+
+    <div class="elevator-banner">
+      <strong>🧳 电梯版顺口溜</strong>
+      成田机场：地面一层1F → 机场电梯 → 地下一层B1京成线闸机 → 站内电梯 → 地下二层B2站台。<br>
+      日本桥：刷出浅草线地铁闸机后右转坐电梯 → 东西线4号线。<br>
+      高田马场：连续乘两部电梯到地面 → 平路过站前广场 → BIGBOX入口刷卡 → 电梯按2到地面二层2F → 西武新宿线3号线。
+    </div>
+
+    <section class="route" aria-label="路线总览">
+      <p class="route-title">一眼看懂路线</p>
+      <div class="route-line">
+        <span>成田机场（第一航站楼）</span><b>→</b><span class="sign orange">Access特快</span><b>→</b><span>日本桥<br><small>浅草线</small></span><b>→</b><span>换乘东西线<br><small>4号线，开往高田马场</small></span><b>→</b><span>高田马场<br><small>东西线 → 西武新宿线</small></span><b>→</b><span>西武新宿线3号线<br><small>各站停车慢车</small></span><b>→</b><span>新井药师前<br><small>从南口出站</small></span>
+      </div>
+    </section>
+
+    <div class="key-box">
+      <div class="key"><small>日本桥换乘</small><strong>东西线4号线<br>只看数字4</strong></div>
+      <div class="key"><small>高田马场换乘</small><strong>BIGBOX 口<br>西武新宿线3号线</strong></div>
+      <div class="key"><small>最后一段</small><strong style="color:#b54b0b">电子屏只认“各停”<br>新井药师前站 南口</strong></div>
+    </div>
+
+    <div class="floor-explain">
+      <strong>机场楼层先记住这三层</strong>
+      <div><span class="floor-code">地面一层1F</span>：入境后的到达大厅</div>
+      <div><span class="floor-code">地下一层B1</span>：京成线闸机和售票区（牌上也可能写 B1F）</div>
+      <div><span class="floor-code">地下二层B2</span>：京成线站台</div>
+      <p><strong>只走：地面一层1F → 机场电梯 → 地下一层B1 → 刷卡 → 站内电梯 → 地下二层B2。</strong></p>
+    </div>
+
+    <section>
+      <h2 class="section-title">从成田 T1 到新井药师前｜25步完整攻略</h2>
+      <p class="small">本页从入境、取行李、过海关后开始，完整覆盖成田机场乘车、日本桥换乘、高田马场换乘和新井药师前出站；不需要打开任何前置攻略。视频与照片用于认地标，路线事实以铁路官方图为准。</p>
+
+      <article class="step">
+        <div class="step-head"><div class="num">1</div><h3>出了海关：从T1到达大厅开始</h3></div>
+        <p>先完成<strong>入境审查 → 取行李 → 海关</strong>。出了海关后还在 T1 到达大厅，先不要走出航站楼。下面照片以北翼为例；若当天从南翼出来，第3步同样走向中央大楼。</p>
+        <div class="visual arrival"><img src="assets/scene-01-north-wing.jpg" alt="实拍视频中的成田T1北翼国际到达大厅"><div class="tag">起点：T1 北翼国际到达大厅</div></div>
+        <p class="small"><strong>迎面看到巴士售票处是正常的。</strong>不需要买巴士票，继续找下一步写着“铁道 / Train”的黑色指示牌。</p>
+        <div class="visual wide"><img src="assets/scene-01b-bus-tickets.jpg" alt="实拍视频中北翼到达大厅迎面的巴士售票处"><div class="tag bottom">迎面是巴士售票处</div></div>
+      </article>
+
+      <article class="step">
+        <div class="step-head"><div class="num">2</div><h3>先查 Suica交通卡余额，再出发</h3></div>
+        <p>先打开<strong>苹果手机（iPhone）</strong>的<strong>“钱包”应用</strong>，点开 <strong>Suica交通卡</strong>。确认余额<strong>至少 ¥2,000</strong>，以免中途余额不足出不了闸。</p>
+        <div class="wallet-check">
+          <div class="wallet-title">苹果手机（iPhone）“钱包”应用 → Suica交通卡</div>
+          <div class="wallet-balance">余额至少 ¥2,000</div>
+          <div class="wallet-warning">余额不足：先坐在机场的椅子上充值，充好后再出发。</div>
+        </div>
+        <div class="visual wide wallet-tutorial"><img src="assets/scene-02a-suica-charge.jpg" alt="简体中文 iPhone 苹果手机主屏幕上的“钱包”App 图标"></div>
+        <p class="caption"><strong>图 1：</strong>在苹果手机主屏幕找到“钱包”应用。</p>
+        <div class="visual wide wallet-tutorial"><img src="assets/scene-02b-suica-topup.jpg" alt="简体中文 iPhone 苹果手机钱包内的 Suica交通卡余额和充值按钮"></div>
+        <p class="caption"><strong>图 2：</strong>打开 Suica交通卡后，确认余额；余额不足时点“充值”，选择充值金额。</p>
+      </article>
+
+      <article class="step">
+        <div class="step-head"><div class="num">3</div><h3>不要下扶梯，先走到中央大楼的电梯</h3></div>
+        <p><strong>厦门航空目前使用T1北翼；实际从哪一侧出海关以当天为准。</strong>从北翼出来就向中央方向走；从南翼出来也向中央方向走。共同目标是<strong>中央口C1、旅客服务中心</strong>所在的中央区域。</p>
+        <p>旅客服务中心背后有中央大楼电梯。只认<strong>电梯图标</strong>和门旁的楼层表；不要下北翼或南翼眼前的扶梯。</p>
+        <div class="visual wide"><img src="assets/narita-terminal-central-elevator-directory-2270s.jpg" alt="成田机场第一航站楼中央大楼电梯，楼层表显示地面一层到达大厅和地下一层铁路"><div class="tag">中央大楼电梯：地面一层1F可到地下一层B1铁路层</div></div>
+        <p class="caption source-caption">实拍截图：中央大楼正面电梯的楼层表；来自页面下方所列的成田机场T1电梯视频。</p>
+      </article>
+
+      <article class="step">
+        <div class="step-head"><div class="num">4</div><h3>乘中央大楼电梯，按“B1”到地下一层B1</h3></div>
+        <p>进入中央大楼电梯后，按按钮 <strong>B1</strong>。B1就是<strong>地下一层B1</strong>，这一层通往地铁；不要按四楼，也不要在一楼改走扶梯。</p>
+        <div class="visual wide"><img src="assets/narita-terminal-central-elevator-panel-b1-2295s.jpg" alt="中央大楼电梯轿厢按钮，可见地面一层数字1和地下一层B1"><div class="tag bottom">在地面一层1F进去，按B1（地下一层）</div></div>
+        <div class="elevator-chain" aria-label="成田机场到京成闸机的电梯路线">
+          <div class="chain-row"><span class="icon">起</span><span>T1到达大厅 <b>地面一层1F</b></span></div>
+          <div class="chain-row"><span class="icon">→</span><span>向中央口C1、旅客服务中心方向走平路</span></div>
+          <div class="chain-row"><span class="icon">↓</span><span>中央大楼电梯 <b>按B1（地下一层）</b></span></div>
+          <div class="chain-row"><span class="icon">到</span><span>地铁与京成线闸机层 <b>地下一层B1</b></span></div>
+        </div>
+      </article>
+
+      <article class="step">
+        <div class="step-head"><div class="num">5</div><h3>到地下一层B1后，走平路找蓝色“京成线”</h3></div>
+        <p>电梯门开后，找<strong>小火车图标</strong>和中文“铁路（成田机场站）”，沿平路走。看到 <span class="sign blue">京成线</span> 就对了；<strong>不要走 JR 线。</strong> 京成线柜台和售票机就在这个方向。</p>
+        <div class="visual wide"><img src="assets/scene-05-keisei-counter.jpg" alt="实拍视频中的京成线Keisei Line方向牌和柜台"><div class="tag bottom">蓝色牌：京成线 Keisei Line；按中间指示牌上白色箭头走</div></div>
+      </article>
+
+      <article class="step">
+        <div class="step-head"><div class="num">6</div><h3>进入京成线“成田机场站（第一航站楼）”</h3></div>
+        <p>蓝牌写着 <strong>京成线 成田机场站</strong>（牌上日文：成田空港駅），就是要进的车站。本攻略按交通卡路线编写：用苹果手机里的Suica交通卡、实体Suica卡或PASMO卡刷卡；进站前先按第2步确认卡和余额。</p>
+        <div class="visual wide"><img src="assets/scene-06-keisei-entrance-wiki.jpg" alt="京成线成田机场第1航站楼站入口，蓝色牌写有Keisei Line Narita Airport Terminal 1 Station"><div class="tag">→ 进这个蓝色“京成线 / Keisei Line”入口</div></div>
+      </article>
+
+      <article class="step">
+        <div class="step-head"><div class="num">7</div><h3>过闸后，只找橙色“Access特快 / 1号线”</h3></div>
+        <p>从第6步的蓝色京成线入口刷卡进站后，要找的是 <span class="sign orange">Access特快 / アクセス特急 / Access Express</span>。橙色牌旁边写大数字 <span class="sign orange">1</span>，这是前往1号线的方向。</p>
+        <div class="route-recognition" aria-label="橙色Access特快1号线识别卡">
+          <div class="access-board"><img class="access-train-icon" src="assets/access-express-icon-user.jpg" alt="橙黑色Access特快车头识别图"><span class="access-label">Access特快<small>アクセス特急</small></span><span class="access-one">1</span></div>
+          <div class="recognition-copy"><strong>橙色栏的Access特快</strong><small>先认这张橙黑色车头图、橙色边框和大数字1。</small></div>
+        </div>
+        <div class="visual wide"><img src="assets/scene-07-access-one.jpg" alt="实拍视频中的橙色Access特快和大数字1指示牌"><div class="tag bottom">橙色Access特快＋大数字1：跟它走 ↗</div></div>
+        <p class="small">过闸后先<strong>稍微向右</strong>，继续找橙色Access特快和大数字1；不要去4号线、5号线入口。</p>
+        <div class="dont">
+          <h3>❌ 4、5号 Skyliner，不要走</h3>
+          <p>这张图写着 <strong>Skyliner</strong>，两侧是 <strong>4号线、5号线</strong>。它去日暮里／上野，需要另买特急券；不是去日本桥要走的线路。</p>
+          <div class="visual no-go"><img src="assets/scene-14-skyliner-45.jpg" alt="实拍视频中标有大数字4和5的Skyliner入口，不能走"><div class="tag bottom">❌ 不要进：Skyliner 4号线、5号线</div></div>
+          <ul>
+            <li><strong>❌ 蓝色2号线、3号线：</strong>是京成本线，不是橙色Access特快1号线。</li>
+            <li><strong>❌ JR线／N'EX：</strong>是另一套铁路，也不是这条直达日本桥的路线。</li>
+          </ul>
+        </div>
+        <div class="visual wide"><img src="assets/scene-17-right-turn.jpg" alt="实拍视频中通过京成闸机后稍微向右继续行走的通道"><div class="tag bottom">过闸后：先稍微向右走 ↗</div></div>
+        <p><strong>看见全家便利店后，继续找橙色大数字1。</strong>全家便利店只是认路地标。</p>
+        <div class="visual wide"><img src="assets/scene-08-familymart.jpg" alt="实拍视频中的全家便利店和橙色Access特快1号线方向牌"><div class="tag bottom">全家旁边：继续跟橙色Access特快／1号线 ↗</div></div>
+        <p class="small">全家便利店在左侧；看见前方橙色大数字1和左箭头时，就准备向左转，不要继续直走。</p>
+        <div class="visual wide"><img src="assets/scene-08b-familymart-left-user-optimized.jpg" alt="前往1号线的路线，全家便利店在左侧，前方可见橙色数字1和左箭头"></div>
+        <p class="small">看到下面这块橙色1号线入口，就说明左转的时机到了。</p>
+        <div class="visual wide"><img src="assets/scene-16-turn-left.jpg" alt="实拍视频中经过全家便利店后出现的橙色1号线Access特快入口"><div class="tag bottom">看到橙色1号线入口：按指示转入通道</div></div>
+      </article>
+
+      <article class="step">
+        <div class="step-head"><div class="num">8</div><h3>进站后看电子屏：确认Access特快、发车时间和终点</h3></div>
+        <p>这块电子屏在刷卡进站后才能看到。找到<span class="sign orange">橙色栏的Access特快</span>，记住这班车的<strong>发车时间和列车终点</strong>。终点常见<strong>羽田空港</strong>或<strong>西馬込</strong>。电子屏不会逐站列出“日本橋”，不要在这里寻找“日本橋”。</p>
+        <div class="notice"><strong>现场柱子通常只写数字1，本页称“1号线”。</strong>记住发车时间和终点后，继续跟橙色Access特快指示前往1号线电梯。若终点不是“羽田空港”或“西馬込”，或者看不清，直接把下面的求助卡给站员看，不要自己猜。</div>
+        <div class="phrase" aria-label="给成田机场站员看的日语求助卡">
+          <strong>给站员看（不用自己读）</strong>
+          <p class="jp">都営浅草線の日本橋駅まで、乗り換えなしで行けるアクセス特急はどの電車ですか？ エレベーターを使いたいです。</p>
+          <p>我想乘坐无需换车、直达都营浅草线日本桥站的Access特快，并且需要使用电梯。请问应该乘哪一班？</p>
+        </div>
+        <div class="visual wide"><img src="assets/scene-09-access-arrow.jpg" alt="刷卡进站后看到的电子屏，橙色栏显示Access特快和数字1"><div class="tag bottom">进站后看：橙色Access特快＋大数字1</div></div>
+        <p class="small">记住电子屏上的发车时间和列车终点后，继续跟头顶的橙色Access特快指示走。</p>
+        <div class="visual wide"><img src="assets/scene-19-platform-entry.jpg" alt="实拍视频中旅客走向Access特快方向牌的通道"><div class="tag bottom">继续走向头顶的Access特快方向牌</div></div>
+        <div class="visual wide"><img src="assets/scene-18-access-sign.jpg" alt="实拍视频中写有Access特快和Access Express的方向牌"><div class="tag bottom">看到Access特快／Access Express：按白色箭头转弯</div></div>
+      </article>
+
+      <article class="step">
+        <div class="step-head"><div class="num">9</div><h3>只找1号线电梯，不走旁边的扶梯</h3></div>
+        <p>沿橙色大数字<strong>1</strong>前进，看到电梯图标后，找到1号线旁的电梯并在门口等候。不要跟着人群走旁边的扶梯；下一步再进电梯按楼层。</p>
+        <div class="elevator-chain" aria-label="成田机场站1号线电梯路线">
+          <div class="chain-row"><span class="icon">1</span><span>跟橙色大数字1和电梯图标 → <b>在电梯门口等候</b></span></div>
+        </div>
+        <div class="visual wide"><img src="assets/keisei-skyaccess-elevator-b1-gate-689s.jpg" alt="1号线旁电梯位于地下一层B1闸机层，按钮显示B1和B2"><div class="tag bottom">找到电梯：目前在地下一层B1，先在门口等候</div></div>
+        <p class="caption source-caption">电梯位置已按京成电铁官方站内图核对；实拍画面用于辨认B1与B2按钮。</p>
+      </article>
+
+      <article class="step">
+        <div class="step-head"><div class="num">10</div><h3>乘站内电梯：地下一层B1 → 地下二层B2</h3></div>
+        <p>找到1号线电梯后进去，按按钮 <strong>B2（地下二层）</strong>。门旁先显示<strong>地下一层B1（闸机层）</strong>，到站后会显示<strong>地下二层B2（站台层）</strong>。</p>
+        <div class="visual wide"><img src="assets/keisei-skyaccess-elevator-b2-platform-693s.jpg" alt="京成Sky Access侧电梯抵达地下二层B2站台层"><div class="tag bottom">到达：地下二层B2站台层</div></div>
+        <p class="caption source-caption">实拍截图：京成Sky Access侧电梯抵达地下二层B2站台层。电梯门和广告可能更新，但楼层链不变。</p>
+      </article>
+
+      <article class="step">
+        <div class="step-head"><div class="num">11</div><h3>到地下二层B2后，再核对电子屏才上车</h3></div>
+        <p>列车通常会在发车时间前<strong>5～10分钟</strong>进入1号线站台。确认<strong>发车时间、列车终点</strong>和“<strong>Access特快</strong>”都与第8步记下的一样，就跟着大家排队上车，在车内等候。没有晚点时，列车会按电子屏显示的时间准点发车。</p>
+        <div class="visual wide"><img src="assets/scene-12-platform-walk.jpg" alt="实拍视频中已经到达京成1号线站台层的平路"><div class="tag bottom">到达1号线后，站台层全程平路</div></div>
+        <div class="visual wide"><img src="assets/scene-13-board-train.jpg" alt="实拍视频中1号线列车到站的场景"><div class="tag bottom">时间、目的地都对，再上车</div></div>
+      </article>
+
+      <article class="step">
+        <div class="step-head"><div class="num">12</div><h3>上车后先找座位坐下，不要着急</h3></div>
+        <p>先让下车的人出来，再拉着行李上车。上车后先找座位坐下、放稳行李；如果暂时没有座位，就扶好行李站稳。从成田机场到日本桥大约还要一个多小时，不要着急，之后按第13步留意车内电子屏。</p>
+        <div class="visual wide"><img src="assets/scene-15-board-door.jpg" alt="实拍视频中列车开门准备上车的场景"><div class="tag bottom">门开后：先下后上，排队上车</div></div>
+        <div class="notice"><strong>不用换车：</strong>“成田Sky Access”是机场这一段的线路名称，“Access特快”是在这条线路上运行的<strong>列车种类</strong>。进入东京后，同一班车会继续开进<strong>都营浅草线</strong>，不用下车换乘。<strong>“浅草线”就是“都营浅草线”的简称</strong>，后文说的都是同一条地铁线。</div>
+      </article>
+
+      <article class="step">
+        <div class="step-head"><div class="num">13</div><h3>留意车内电子屏；看到“日本橋”再下车</h3></div>
+        <p>车内电子屏会轮播<strong>列车终点、线路图和下一站</strong>。屏幕显示<strong>羽田空港</strong>或<strong>西馬込</strong>，是在告诉你整班车的终点，并不是让你坐到那里。大部分时间安心坐好；接近日本桥时继续观察车内电子屏，看到<strong>“日本橋”</strong>到站提示，再准备下车。</p>
+        <div class="visual wide"><img src="assets/access-onboard-display-0534.jpg" alt="Access特快车内电子屏示例，显示终点羽田空港和沿途线路图"><div class="tag bottom">顶部“羽田空港”是整班车终点；继续坐到屏幕提示“日本橋”</div></div>
+        <p class="caption source-caption">视频5分34秒实拍截图：车内电子屏显示Access特快、终点“羽田空港”和沿途线路图。</p>
+        <div class="visual wide"><img src="assets/access-onboard-route-map-0535.jpg" alt="Access特快车内电子屏切换到完整直通线路图，红色都营浅草线上可见日本橋"><div class="tag bottom">下一页线路图：红色都营浅草线上可以看到“日本橋”</div></div>
+        <p class="caption source-caption">视频5分35秒实拍截图：车内电子屏显示成田Sky Access线、都营浅草线和京急线的直通线路图。</p>
+        <p>下车站是 <span class="sign red">都营浅草线 日本桥（日本橋）</span>。途中如果先看到“东日本桥（東日本橋）”，先不要下车；继续等车内电子屏出现<strong>没有“東”字的“日本橋”</strong>，列车停稳后再下车。下车后不要走普通出口，继续按下面第14步换乘东西线。</p>
+        <div class="visual wide"><img src="assets/nihombashi-a13-platform-sign.jpg" alt="日本桥站站台柱子站牌，大字写日本橋，上方显示A13"><div class="tag bottom">到站后认准站牌上的大字“日本橋”</div></div>
+        <p class="caption source-caption">视频末尾2分44秒实拍截图：都营浅草线日本桥站的站台柱子站牌。</p>
+        <div class="ai-help">
+          <p><strong>上车后可用 AI 再确认到站时间：</strong>把上车时间和电子屏显示的车次／终点发给 ChatGPT 或 Google AI，请它查询这班车预计几点到都营浅草线日本桥站。<strong>手机时间只作提醒；看到站名“日本橋”再下车。</strong></p>
+          <div class="copy-prompt">
+            <div class="copy-prompt-title">可直接复制给 ChatGPT 或 Google AI</div>
+            <textarea id="arrival-ai-prompt" readonly aria-label="到日本桥的查询提示词">我今天在成田机场站（第一航站楼），于【上车时间】乘上电子屏显示为【车次／终点】的京成 Access 特快（Access Express）。请按今天的时刻表告诉我这班车预计几点到日本桥站（Nihombashi / A-13）、是否需要换车，以及到站前的主要站。请用简短中文回答，并注意不要把东日本桥（Higashi-nihombashi / A-15）当成日本桥（Nihombashi / A-13）。</textarea>
+            <div class="copy-row"><button type="button" class="copy-btn" onclick="copyAiPrompt()">复制提示词</button><span id="copy-status" class="copy-status" aria-live="polite"></span></div>
+          </div>
+        </div>
+      </article>
+
+      <div class="station-break" id="nihombashi-transfer">
+        <small>第二段｜第一次换乘</small>
+        <h2>日本桥 <span class="station-code">浅草线 → 东西线</span></h2>
+        <p>刷出浅草线闸机 → 右转乘电梯 → 长通道 → 看到东西线入站标志后刷卡进入 → 前往东西线4号线</p>
+      </div>
+
+      <article class="step">
+        <div class="step-head"><div class="num">14</div><h3>到日本桥直接下车，沿站台找“东西线”换乘图标</h3></div>
+        <p>到<strong>日本桥（站牌写：日本橋）</strong>后直接下车。站台和浅草线地铁闸机都在<strong>地下二层B2</strong>；沿同层站台平路找<strong>东西线换乘图标、电梯图标</strong>和<span class="sign green">茅场町方向闸机</span>（牌上日文：茅場町方面改札）。</p>
+        <div class="luggage-tip"><strong>“茅场町方向”只是日本桥站内这组闸机的方位名，不是让你去茅场町站。</strong>本行程从成田方向到达，按这组闸机和旁边的电梯换乘；不需要在下车后再找浅草线站台数字。</div>
+        <div class="visual wide"><img src="assets/nh-01-asakusa-gate-video.png" alt="日本桥浅草线茅场町方向地铁闸机与东西线指示"><div class="tag">刷出这组浅草线地铁闸机；不要跟“出口 A”走远</div></div>
+        <p class="caption source-caption">视频截帧：CORO2GO《日本橋駅 浅草線から東西線へ—階段のない乗り換え》；用于辨认闸机与电梯方向。</p>
+      </article>
+
+      <article class="step">
+        <div class="step-head"><div class="num">15</div><h3>刷出浅草线地铁闸机，立刻右转坐电梯</h3></div>
+        <p>从<strong>茅场町方向闸机</strong>用同一张Suica交通卡或PASMO卡刷出，<strong>出闸后马上向右看</strong>。乘闸机外的电梯从<strong>地下二层B2</strong>下降到<strong>地下三层B3</strong>；不要跟人群去楼梯或地面出口。</p>
+        <div class="visual wide"><img src="assets/nh-02-elevator-video.png" alt="日本桥浅草线闸机右侧的电梯"><div class="tag">闸机外右手边：乘这台电梯下到地下三层B3</div></div>
+        <p class="caption source-caption">视频截帧：CORO2GO；现场电梯门与广告可能更新。</p>
+      </article>
+
+      <article class="step">
+        <div class="step-head"><div class="num">16</div><h3>地下三层B3一直直走，看到东西线入站闸机后再刷卡</h3></div>
+        <p>电梯门开后，沿<strong>地下三层B3</strong>的无台阶通道一直直走。主要寻找<span class="sign blue">东西线</span>和换乘图标（牌上日文：東西線）。看到<strong>东西线入站标志</strong>后，用同一张交通卡再次刷入；同一组闸机即使还写着“银座线”也不用管。</p>
+        <div class="route-recognition" aria-label="东西线标志识别卡">
+          <div class="recognition-icons"><img class="recognition-logo" src="assets/tokyo-metro-logo.png" alt="蓝色东京地铁标志"><img class="recognition-icon" src="assets/tokyo-tozai-icon.png" alt="东西线蓝色圆圈T标志"></div>
+          <div class="recognition-copy"><strong>东西线</strong><small>主要认“东西线／東西線”；左边蓝色标志和蓝色圆圈T只用于对照现场图形。</small></div>
+        </div>
+        <div class="elevator-chain" aria-label="日本桥电梯换乘链">
+          <div class="chain-row"><span class="icon">出</span><span>浅草线地铁闸机 <b>刷出</b></span></div>
+          <div class="chain-row"><span class="icon">↘</span><span>右转乘电梯 <b>地下二层B2 → 地下三层B3</b></span></div>
+          <div class="chain-row"><span class="icon">→</span><span>无台阶长通道一直走</span></div>
+          <div class="chain-row"><span class="icon">入</span><span>东西线闸机 <b>刷入</b></span></div>
+        </div>
+        <div class="visual wide"><img src="assets/nihombashi-tozai-gate-approach-clear.jpg" alt="日本桥无台阶通道尽头，前方出现东西线地铁闸机"><div class="tag bottom">通道尽头：继续向前，找到带蓝色“东西线”标志的粉色地铁闸机</div></div>
+        <div class="visual wide"><img src="assets/nihombashi-tozai-gate-clear.jpg" alt="日本桥东西线入站闸机，柱子和头顶标志清楚显示东西线"><div class="tag bottom">看到东西线和粉色闸机：用同一张交通卡刷卡进入</div></div>
+        <p class="caption source-caption">清晰实拍截图：Traveler Sheep《日本桥站 都营浅草线换乘东西线》，约1分55秒至1分58秒。</p>
+        <p class="small">这是<strong>出闸换乘</strong>，不是走错路。IC 卡按规则自动处理；请在 60 分钟内完成，并且每一道闸都刷同一张卡。</p>
+      </article>
+
+      <article class="step">
+        <div class="step-head"><div class="num">17</div><h3>只看柱子上的大数字4：东西线4号线</h3></div>
+        <p>刷进东西线闸机后前往站台，<strong>只找柱子或牌上的大数字4</strong>。本页称为<strong>东西线4号线</strong>，它开往高田马场方向。<strong>数字3是反方向，绝对不要上。</strong></p>
+        <div class="dont"><h3>日本桥需要小心地铁方向，不要坐反</h3><p><span class="ok-mark">✓</span> <strong>正确：4号线 → 高田马场／中野方向。</strong><br><span class="bad-mark">×</span> <strong>错误：3号线 → 西船桥方向。</strong></p></div>
+        <div class="visual wide"><img src="assets/nihombashi-tozai-overhead-4-vs-3-clear.jpg" alt="日本桥东西线头顶牌清楚显示4号线中野三鹰方向和3号线西船桥方向"><div class="tag bottom">✓ 左边4号线：中野方向；× 右边3号线：西船桥方向</div></div>
+        <div class="visual wide"><img src="assets/nihombashi-tozai-platform-4-vs-3-clear.jpg" alt="日本桥东西线站台柱子清楚显示大数字4和3，视频标注中野方向与西船桥方向"><div class="tag bottom">画面自带方向标注：去左边大数字4，不去右边大数字3</div></div>
+        <p class="caption source-caption">清晰实拍截图：Traveler Sheep《日本桥站 都营浅草线换乘东西线》，约2分18秒至2分21秒。</p>
+        <div class="luggage-tip">若体力允许，在日本桥站台沿平路走到列车<strong>9～10号车厢</strong>附近再上车，会更靠近高田马场的电梯；不赶车，可以放过一班。若不想多走，先上车，到高田马场后再沿站台平走也可以。</div>
+      </article>
+
+      <article class="step">
+        <div class="step-head"><div class="num">18</div><h3>乘东西线坐7站，到高田马场下车</h3></div>
+        <p>从日本桥站乘东西线，依次经过：大手町 → 竹桥 → 九段下 → 饭田桥 → 神乐坂 → 早稻田 → <strong>高田马场（站牌写：高田馬場）</strong>。这段所有东西线列车都停高田马场。</p>
+        <div class="mini-route"><span class="dot">日本桥（东西线）</span><b>→</b><span class="dot">7站</span><b>→</b><span class="dot">高田马场</span></div>
+        <div class="visual wide"><img src="assets/tb-03-next-takadanobaba-video.jpg" alt="东西线列车车内屏显示下一站高田马场"><div class="tag bottom">车内屏看到“高田馬場”后准备下车</div></div>
+        <div class="visual station-sign-detail" role="img" aria-label="东西线高田马场站清晰站名牌"><div class="tag bottom">到站后认准站牌上的四个字：高田馬場</div></div>
+        <p class="caption source-caption">照片：MaedaAkihiko / Wikimedia Commons / CC BY-SA 4.0（网页放大裁切显示）。</p>
+      </article>
+
+      <div class="video-card">
+        <h3>▶ 日本桥“无楼梯换乘”路线视频</h3>
+        <div class="video-frame"><iframe loading="lazy" src="https://www.youtube-nocookie.com/embed/HxGdkxa7Rwo" title="日本桥浅草线到东西线无楼梯换乘视频" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+        <p class="video-warning">视频前半段可跟着认闸机、电梯和长通道；到东西线后仍以本页为准找<strong>大数字4，也就是4号线</strong>，不要照视频末尾的站台画面判断方向。需联网播放。</p>
+      </div>
+
+      <div class="station-break seibu" id="takadanobaba-transfer">
+        <small>第三段｜第二次换乘</small>
+        <h2>高田马场 <span class="station-code">东西线 → 西武新宿线</span></h2>
+        <p>连续乘两部电梯到地面 → 站前广场平路过街 → BIGBOX入口 → 刷进西武新宿线后乘电梯</p>
+      </div>
+
+      <article class="step">
+        <div class="step-head"><div class="num">19</div><h3>到高田马场直接下车，向列车前进方向找电梯</h3></div>
+        <p>到高田马场后直接下车。沿站台向列车前进方向走，找<strong>电梯图标和JR／西武换乘图标</strong>；电梯位置约在9号车厢前方、9～10号车厢交界附近。</p>
+        <div class="visual wide"><img src="assets/tb-12-metro-jr-seibu-sign-video.jpg" alt="高田马场东西线到站站台的JR和西武新宿线方向指示"><div class="tag bottom">下车后沿列车前进方向：跟“JR线・西武新宿线”方向走</div></div>
+        <div class="visual wide"><img src="assets/tb-04-metro-platform2-elevator-video.jpg" alt="高田马场东西线到站站台黄色柱旁的电梯"><div class="tag bottom">看到黄色柱旁这台电梯就进去</div></div>
+      </article>
+
+      <article class="step">
+        <div class="step-head"><div class="num">20</div><h3>连续乘两部电梯到地面一层1F</h3></div>
+        <p>第一部电梯从<strong>地下二层B2站台</strong>到<strong>地下一层B1闸机层</strong>。从<strong>靠近4号、5号出口一侧</strong>的“JR／西武方向闸机”（牌上日文：JR線・西武新宿線方面改札）刷出后，<strong>立即左转</strong>。第二部电梯不在闸机旁边：沿地下一层B1的平路继续跟<strong>电梯图标、黄色盲道</strong>和“电梯专用出口／去地面”（牌上日文：エレベーター専用口／地上へ），找到蓝框电梯，再乘到<strong>地面一层1F</strong>。</p>
+        <div class="elevator-chain" aria-label="高田马场地铁电梯链">
+          <div class="chain-row"><span class="icon">①</span><span>东西线站台 <b>地下二层B2 → 地下一层B1闸机层</b></span></div>
+          <div class="chain-row"><span class="icon">出</span><span>从靠近4号、5号出口一侧的“JR／西武方向闸机”<b>刷出后左转</b></span></div>
+          <div class="chain-row"><span class="icon">②</span><span>“电梯专用出口” <b>地下一层B1 → 地面一层1F</b></span></div>
+        </div>
+        <div class="visual wide"><img src="assets/tb-13-first-elevator-press-b1-video.jpg" alt="高田马场东西线站台第一部电梯内按地下一层B1闸机层按钮"><div class="tag bottom">第一部电梯内：按地下一层B1“闸机层”</div></div>
+        <div class="visual wide"><img src="assets/tb-14-first-elevator-arrives-b1-video.jpg" alt="第一部电梯楼层显示器显示到达地下一层B1闸机层"><div class="tag bottom">显示B1：第一部电梯已到地下一层闸机层</div></div>
+        <div class="visual wide"><img src="assets/tb-15-correct-jr-seibu-gate-wadattsu.jpg" alt="高田马场靠近4号和5号出口一侧的JR线和西武新宿线方向闸机"><div class="tag bottom">从这组闸机刷出：靠近4号、5号出口一侧；刷出后立即左转</div></div>
+        <div class="visual wide"><img src="assets/tb-16-ground-elevator-b1-entrance-video.jpg" alt="高田马场地下一层B1蓝色门框的地面电梯入口"><div class="tag bottom">刷出后左走：继续找这道蓝框电梯</div></div>
+        <div class="visual wide"><img src="assets/tb-17-ground-elevator-going-to-1f-video.jpg" alt="第二部电梯显示正在前往地面一层1F"><div class="tag bottom">第二部电梯内：显示“1”，上到地面一层1F</div></div>
+        <div class="visual wide"><img src="assets/tb-05-metro-street-elevator-video.jpg" alt="高田马场第二部电梯开门通向地面站前广场"><div class="tag bottom">开门到地面：出电梯后立即左转，往高田马场车站入口方向走</div></div>
+        <p class="small"><strong>不要进JR闸机，也不要走2号或3号出口的楼梯。</strong>只找电梯图标和“电梯专用出口”。</p>
+      </article>
+
+      <article class="step">
+        <div class="step-head"><div class="num">21</div><h3>到地面后走平路，过站前广场去 BIGBOX</h3></div>
+        <div class="flat-walk"><strong>这段不是室内直连，而且BIGBOX不在电梯门正前方。</strong><br>出地面电梯 → 立即左转 → 过眼前通向车站高架桥的短横道 → 过街后再次左转 → 沿广场平路直走去BIGBOX → 从交番（派出所）旁的西武BIGBOX入口进入（牌上日文：ビッグボックス口）。</div>
+        <p>如果电梯开门时正前方看不到BIGBOX，<strong>不是走错</strong>；要先左转过短横道，过街后再左转，才会看到BIGBOX大楼。全程是短距离室外平路，没有楼梯；过街先看信号与车辆，行李箱慢慢拉。</p>
+        <div class="mini-route"><span class="dot">出电梯左转</span><b>→</b><span class="dot">过短横道</span><b>→</b><span class="dot">再次左转</span><b>→</b><span class="dot">BIGBOX</span></div>
+        <div class="visual wide"><img src="assets/tb-06-correct-crosswalk-toward-station-video.jpg" alt="高田马场地面电梯左转后面向车站高架桥和短横道的正确方向"><div class="tag bottom">出地面电梯后左转：先过前方这段短横道</div></div>
+        <div class="visual wide"><img src="assets/tb-07-after-crossing-turn-left-bigbox-video.jpg" alt="过短横道后再次左转所看到的BIGBOX大楼"><div class="tag bottom">过横道后再左转：认准左前方的BIGBOX大楼</div></div>
+      </article>
+
+      <article class="step">
+        <div class="step-head"><div class="num">22</div><h3>从BIGBOX入口刷进西武新宿线，电梯按“2”</h3></div>
+        <div class="route-recognition" aria-label="西武新宿线标志识别卡">
+          <div class="recognition-icons"><img class="recognition-logo" src="assets/seibu-logo.svg" alt="西武铁路蓝绿色标志"><img class="recognition-icon" src="assets/seibu-ss02.svg" alt="西武新宿线高田马场站辅助标志"></div>
+          <div class="recognition-copy"><strong>西武新宿线</strong><small>主要认“西武新宿线”；蓝绿色标志和SS02只是现场辅助图形。</small></div>
+        </div>
+        <p>在<span class="sign green">BIGBOX入口</span>（牌上日文：ビッグボックス口）用同一张交通卡刷进<strong>西武新宿线</strong>。入口闸机在<strong>地面一层1F</strong>；刷卡后找电梯，进去按数字<strong>2</strong>，到<strong>地面二层2F</strong>站台层。电梯开门后再找柱子上的大数字<strong>3</strong>；<strong>3是站台号，不是楼层。</strong>数字5去西武新宿，是反方向。</p>
+        <div class="elevator-chain" aria-label="西武新宿线BIGBOX入口到3号线">
+          <div class="chain-row"><span class="icon">入</span><span>BIGBOX入口刷进西武新宿线 <b>地面一层1F</b></span></div>
+          <div class="chain-row"><span class="icon">2</span><span>进电梯后按数字2 → <b>地面二层2F</b></span></div>
+          <div class="chain-row"><span class="icon">3</span><span>开门到站台层后，再找大数字3 → <b>3号线</b></span></div>
+        </div>
+        <div class="visual wide"><img src="assets/tb-08-seibu-bigbox-gate-elevator-video.jpg" alt="高田马场西武新宿线BIGBOX闸机层的电梯入口"><div class="tag bottom">刷进西武新宿线后：进入这台电梯，按2</div></div>
+        <div class="visual wide"><img src="assets/tb-10-seibu-platform34-arrival-video.jpg" alt="高田马场电梯开门到达地面二层2F的3号线和4号线共用站台"><div class="tag bottom">按2到地面二层2F；开门后再找大数字3</div></div>
+        <div class="visual wide"><img src="assets/tb-02-seibu-platform3-commons.png" alt="高田马场西武新宿线数字3、4的号线站台"><div class="tag bottom">看到站台大数字3后，看电子屏，只上显示“各停”的列车</div></div>
+      </article>
+
+      <article class="step">
+        <div class="step-head"><div class="num">23</div><h3>只乘电子屏显示“各停”的列车，快车不要上</h3></div>
+        <p>乘坐站台电子屏显示<strong>“各停”</strong>的列车，并在脚下写着<strong>“各駅停車”</strong>的地面标志附近等候。“各停”和“各駅停車”翻译成中文，都是<strong>“各站停车／慢车”</strong>的意思。脚下文字只表示候车位置，最终仍以这一班车的电子屏显示“各停”为准。急行、准急等快车会越过新井药师前；就算更早发车也不要上。</p>
+        <div class="dont"><h3>上车前只核对两项</h3><ul><li><strong>西武新宿线3号线</strong></li><li>电子屏显示<strong>“各停”</strong></li></ul><p>站台方向牌可能写“所泽／本川越／拝岛方向”，但列车终点也可能是上石神井、田无、新所泽或玉川上水；<strong>不要拿终点名称当成必须条件。</strong></p></div>
+        <div class="visual wide"><img src="assets/tb-09-seibu-local-board-video.jpg" alt="高田马场西武新宿线3号线电子屏显示各停"><div class="tag bottom">只认“各停”两个字；颜色、时间和目的地只是示例</div></div>
+        <div class="luggage-tip">为了到新井药师前南口，平路走得动的话可在高田马场站台往列车前方走，尽量乘<strong>最前面的8号车厢</strong>；不想多走就在电梯附近上车，到站后再沿站台平走。</div>
+      </article>
+
+      <article class="step">
+        <div class="step-head"><div class="num">24</div><h3>乘西武新宿线各站停车慢车，坐3站到新井药师前</h3></div>
+        <p>从高田马场出发后依次是：下落合 → 中井 → <strong>新井药师前（站牌写：新井薬師前）</strong>，通常约6～7分钟。<strong>不要只靠听日语；看屏幕或站牌上的“新井薬師前”站名，并提前设手机提醒。</strong></p>
+        <div class="mini-route"><span class="dot">高田马场</span><b>→</b><span class="dot">下落合</span><b>→</b><span class="dot">中井</span><b>→</b><span class="dot">新井药师前</span></div>
+      </article>
+
+      <div class="station-break arrival" id="arai-arrival">
+        <small>第四段｜到达</small>
+        <h2>新井药师前 <span class="station-code">西武新宿线｜从南口出站</span></h2>
+        <p>下车后沿站台前往南口闸机</p>
+      </div>
+
+      <article class="step">
+        <div class="step-head"><div class="num">25</div><h3>到新井药师前直接下车，顺着人流前往“南口”</h3></div>
+        <p>到新井药师前后直接下车，顺着人流方向走，并以<strong>南口</strong>箭头为准；到闸机后刷卡出站。</p>
+        <div class="mini-route" aria-label="新井药师前南口出站顺序"><span class="dot">下车</span><b>→</b><span class="dot">顺着人流</span><b>→</b><span class="dot">南口闸机</span><b>→</b><span class="dot">出站</span></div>
+      </article>
+
+      <div class="dont">
+        <h3>整段路线的 6 个高频错误</h3>
+        <div class="error-grid">
+          <div>① 日本桥把浅草线闸机与东西线闸机当成同一闸内</div>
+          <div>② 日本桥误上3号线；正确是4号线</div>
+          <div>③ 高田马场误进 JR 闸机</div>
+          <div>④ 西武误上返回新宿的5号线</div>
+          <div>⑤ 看到更快的急行／准急就上</div>
+          <div>⑥ 西武新宿线电梯里把3号线误当3楼；电梯应按2，到站台后再找3号线</div>
+        </div>
+      </div>
+    </section>
+
+      <section class="phrase">
+        <strong>给工作人员看的日语（不用自己读，直接把屏幕递给他看）</strong>
+        <p class="jp">日本橋まで乗り換えなしのアクセス特急に乗りたいです。エレベーターを使いたいです。</p>
+        <p>我要乘坐直达日本桥的Access特快，并且需要使用电梯。</p>
+        <hr>
+        <p class="jp">都営浅草線から東西線まで、エレベーターだけで乗り換えたいです。</p>
+        <p>我想只乘电梯，从浅草线换乘东西线。</p>
+        <hr>
+        <p class="jp">すみません、荷物が多いので、エレベーターだけで行きたいです。</p>
+        <p>不好意思，我行李很多，想只坐电梯前往。</p>
+        <hr>
+        <p class="jp">高田馬場のエレベーター出口から、西武新宿線のビッグボックス口まで、どう行けばいいですか？</p>
+        <p>从高田马场的电梯出口到西武新宿线 BIGBOX 口该怎么走？</p>
+        <hr>
+        <p class="jp">新井薬師前まで各駅停車で行きたいです。3番線で合っていますか？</p>
+        <p>我想乘各站停车慢车去新井药师前，3号线对吗？</p>
+      </section>
+
+    <section class="route">
+      <p class="route-title">如果当天出口是南翼怎么办？</p>
+      <div class="branch">
+        <div><strong>北翼（MF815按此准备）</strong>向航站楼中央方向走，约等于在大厅向左走 → 找中央口C1和旅客服务中心背后的电梯 → 按B1到地下一层B1。</div>
+        <div><strong>南翼（临时调整时）</strong>同样向航站楼中央方向走，约等于在大厅向右走 → 找同一组中央大楼电梯 → 按B1到地下一层B1。</div>
+      </div>
+        <p class="small">两边的共同目标都是中央大楼电梯。到地下一层B1后才跟小火车图标走平路去京成线；不要乘大厅里最近的扶梯下楼。</p>
+    </section>
+
+    <section>
+      <h2 class="section-title">资料与视频来源</h2>
+      <ul class="source-list">
+        <li><strong>本页图片的视频来源：</strong><a href="https://www.youtube.com/watch?v=rfvvFG2ThI4" target="_blank" rel="noreferrer">T1 找京成 Access 特快</a>、<a href="https://www.youtube.com/watch?v=RbpluLpcMe4" target="_blank" rel="noreferrer">T1 北翼国际到达→京成线</a>、<a href="https://www.youtube.com/watch?v=r6WOFBdpKdQ&t=334s" target="_blank" rel="noreferrer">Access特快车内电子屏</a>、<a href="https://www.youtube.com/watch?v=gKeHms_rWnc&t=115s" target="_blank" rel="noreferrer">日本桥浅草线→东西线清晰换乘画面</a>，以及<a href="https://www.youtube.com/watch?v=Nvtc83HC0w0&t=164s" target="_blank" rel="noreferrer">日本桥A13站牌</a>。</li>
+        <li><strong>第 2 步 Suica交通卡简体中文界面与充值操作参考：</strong><a href="https://www.hopetrip.com/news/detail-956.html" target="_blank" rel="noreferrer">Hopetrip：苹果手机绑定西瓜卡教程</a>。</li>
+        <li><a href="https://www.narita-airport.jp/zh-sc/flight/airline-search/cxa/" target="_blank" rel="noreferrer">成田机场官方：厦门航空（MF/CXA）— T1 北翼 / 4F</a></li>
+        <li><a href="https://www.narita-airport.jp/zh-sc/access/train/railway-route-1/" target="_blank" rel="noreferrer">成田机场官方：从 T1 国际到达大厅到成田机场站</a></li>
+        <li><a href="https://www.narita-airport.jp/files/c96d168ad8da46e34a3bb12181b25aa04151a606ad5795fa6b8b10e87971931c" target="_blank" rel="noreferrer">成田机场官方：2025年简体中文第一航站楼楼层图（核对中央大楼电梯）</a></li>
+        <li><a href="https://www.narita-airport.jp/zh-sc/service/transportation/train-ticket/" target="_blank" rel="noreferrer">成田机场官方：铁路车票售票位置</a></li>
+        <li><a href="https://www.keisei.co.jp/keisei/tetudou/skyliner/jp/traffic/express.php" target="_blank" rel="noreferrer">京成电铁官方：Access特快可直通浅草线、日本桥</a>；<a href="https://keisei.ekitan.com/naritaacs-i/timetable/station/682-7/d1" target="_blank" rel="noreferrer">成田机场T1官方时刻表</a>用于核对列车种类、发车时间和终点。</li>
+        <li><a href="https://keisei.ekitan.com/naritaacs-i/timetable/station/682-7/d1" target="_blank" rel="noreferrer">京成电铁官方：成田机场 T1 时刻表（当天电子屏为准）</a></li>
+        <li><a href="https://www.keisei.co.jp/keisei/tetudou/accessj/narita-airport-terminal-1.php" target="_blank" rel="noreferrer">京成电铁官方：成田机场站页面</a>与<a href="https://www.keisei.co.jp/keisei/tetudou/accessj/assets/images/narita-airport-terminal-1/floormap.jpg" target="_blank" rel="noreferrer">官方站内图（核对地下一层B1至地下二层B2电梯）</a></li>
+        <li><a href="https://www.keisei.co.jp/keisei/tetudou/skyliner/jp/traffic/express_fares.php" target="_blank" rel="noreferrer">京成电铁官方：Access特快主要站票价</a></li>
+        <li><a href="https://www.kotsu.metro.tokyo.jp/eng/subway_stations/nihombashi.html" target="_blank" rel="noreferrer">东京都交通局：日本桥站（都营浅草线）</a></li>
+        <li><strong>日本桥官方核对：</strong><a href="https://www.kotsu.metro.tokyo.jp/subway/stations/nihombashi.html" target="_blank" rel="noreferrer">都营浅草线日本桥站页</a>、<a href="https://www.kotsu.metro.tokyo.jp/subway/stations/" target="_blank" rel="noreferrer">浅草线车站顺序</a>、<a href="https://www.kotsu.metro.tokyo.jp/subway/timetable/asakusa/A16ND.html" target="_blank" rel="noreferrer">Access特快在地铁线内各站停车的时刻表说明</a>、<a href="https://www.tokyometro.jp/station/nihombashi/accessibility/index.html" target="_blank" rel="noreferrer">东西线日本桥无障碍设备</a>、<a href="https://www.tokyometro.jp/station/nihombashi/yardmap/index_print.html" target="_blank" rel="noreferrer">东西线日本桥站内图</a>、<a href="https://www.tokyometro.jp/ticket/guide/transfertime/index.html" target="_blank" rel="noreferrer">出闸换乘与60分钟规则</a>。</li>
+        <li><strong>高田马场电梯路线：</strong><a href="https://www.tokyometro.jp/station/takadanobaba/accessibility/index.html" target="_blank" rel="noreferrer">东京地铁无障碍设备</a>、<a href="https://www.tokyometro.jp/station/takadanobaba/yardmap/index_print.html" target="_blank" rel="noreferrer">东京地铁站内图</a>、<a href="https://www.station-ev-information.tokyo/takdanobaba_tou_seibu/" target="_blank" rel="noreferrer">两部电梯与地面左转、过横道、再左转的实地路线</a>、<a href="https://www.seiburailway.jp/railway/station/takadanobaba/" target="_blank" rel="noreferrer">西武高田马场站（BIGBOX入口电梯）</a>。</li>
+        <li><strong>线路标志核对：</strong><a href="https://www.tokyometro.jp/station/nihombashi/index.html" target="_blank" rel="noreferrer">东西线日本桥官方站页</a>与<a href="https://www.seiburailway.jp/railway/station/takadanobaba/" target="_blank" rel="noreferrer">西武新宿线高田马场官方站页</a>；标志只作现场图形对照，正文始终以中文线路名为主。</li>
+        <li><strong>新井药师前官方核对：</strong><a href="https://www.seiburailway.jp/railway/station/araiyakushi-mae/" target="_blank" rel="noreferrer">西武新宿线新井药师前站页</a>与<a href="https://www.seiburailway.jp/railway/station/image/SS05.png" target="_blank" rel="noreferrer">官方站内图</a>；施工期以临时标识为准。</li>
+        <li><strong>逐步实拍参考：</strong><a href="https://wadattsu261.com/content/nihonbashi-toeiasakusa-metrotozailine-transfer-information/" target="_blank" rel="noreferrer">日本桥浅草线→东西线</a>、<a href="https://wadattsu261.com/content/takadanobaba-metrotozaihome-info/" target="_blank" rel="noreferrer">高田马场东西线到站电梯与靠近4号、5号出口一侧的闸机</a>、<a href="https://wadattsu261.com/content/takadanobaba-metrotozai-seibushinjukuline-transfer-information/" target="_blank" rel="noreferrer">高田马场东西线→西武新宿线</a>、<a href="https://norikaemap.com/takadanobaba/1203/" target="_blank" rel="noreferrer">Norikaemap 六步图</a>、<a href="https://www.mapple.net/original/507453/?pg=1" target="_blank" rel="noreferrer">Mapple 换乘指南</a>。这些普通路线多走楼梯，方向参考可以，行李箱请按本页电梯主线。</li>
+        <li><strong>电梯实拍视频：</strong><a href="https://www.youtube.com/watch?v=58n0Zdk6ZyA" target="_blank" rel="noreferrer">成田机场第一航站楼电梯全集（madoshi E.T）</a>；本页步骤3、4、10的电梯截图来自该视频。</li>
+        <li><strong>日本桥视频核对：</strong><a href="https://www.youtube.com/watch?v=HxGdkxa7Rwo" target="_blank" rel="noreferrer">成田方向到站一侧→东西线无楼梯换乘（CORO2GO）</a>、<a href="https://www.youtube.com/watch?v=xfuWe4LggRE" target="_blank" rel="noreferrer">浅草线闸机电梯：地下二层B2↔地下三层B3</a>。另一个<a href="https://www.youtube.com/watch?v=zWJQ08rE-ZY&t=395s" target="_blank" rel="noreferrer">日本桥换乘视频6分35秒画面</a>显示浅草线<strong>2号线</strong>，之后经过“日本桥方向闸机”，属于反方向到站路线，因此不作为本行程配图。</li>
+        <li><strong>高田马场与西武视频截图：</strong><a href="https://www.youtube.com/watch?v=QnGNgKr-bPw" target="_blank" rel="noreferrer">东西线车内到站屏</a>、<a href="https://www.youtube.com/watch?v=SlK7sadQc40" target="_blank" rel="noreferrer">东西线到站、换乘指示与电梯</a>、<a href="https://www.youtube.com/watch?v=EGKMFWf7DOY" target="_blank" rel="noreferrer">东西线站台第一部电梯：地下二层B2到地下一层B1</a>、<a href="https://www.youtube.com/watch?v=BnJI0MD121o" target="_blank" rel="noreferrer">地下一层B1第二部电梯到地面一层1F</a>、<a href="https://www.youtube.com/watch?v=jzCW8fpU0L4" target="_blank" rel="noreferrer">地面左转、过横道、再左转去BIGBOX</a>、<a href="https://www.youtube.com/watch?v=HJi8fFHxt6E" target="_blank" rel="noreferrer">西武BIGBOX闸机层电梯到3、4号线共用站台</a>、<a href="https://www.youtube.com/watch?v=-kNeKc1u8Og" target="_blank" rel="noreferrer">西武新宿线3号线电子屏</a>。</li>
+        <li><strong>截图与普通网站图片使用说明：</strong>YouTube截图和わだっつログ闸机照片仅用于路线辨认，版权归原作者；现场广告、电子屏内容和装修可能变化，对外公开发布前请另行取得或确认使用许可。</li>
+        <li><strong>开放许可照片：</strong><a href="https://commons.wikimedia.org/wiki/File:Nihombashi-Sta-Tozai-line-gate.JPG" target="_blank" rel="noreferrer">日本桥东西线闸机（Nyao148, CC BY-SA 3.0）</a>、<a href="https://commons.wikimedia.org/wiki/File:Tokyo-Metro_Takadanobaba-STA_Platform2.jpg" target="_blank" rel="noreferrer">高田马场东西线站台清晰站牌（MaedaAkihiko, CC BY-SA 4.0）</a>、<a href="https://commons.wikimedia.org/wiki/File:Seibu_Takadanobaba-STA_Platform3-4.jpg" target="_blank" rel="noreferrer">西武新宿线3、4号线（MaedaAkihiko, CC BY-SA 4.0）</a>。</li>
+      </ul>
+      <div class="credit-grid">
+        <div class="credit"><a href="https://www.youtube.com/watch?v=rfvvFG2ThI4" target="_blank" rel="noreferrer">T1 找京成 Access 特急</a><br>樹葉生活趣</div>
+        <div class="credit"><a href="https://www.youtube.com/watch?v=GeN_n5sVywQ" target="_blank" rel="noreferrer">T1 南北翼攻略</a><br>高鹏Inter</div>
+        <div class="credit"><a href="https://www.youtube.com/watch?v=9zGMwnKVs2w" target="_blank" rel="noreferrer">成田机场交通全攻略</a><br>喵新聞</div>
+        <div class="credit"><a href="https://www.youtube.com/watch?v=EmntsU9u1vw" target="_blank" rel="noreferrer">成田机场交通攻略</a><br>醉旅宿</div>
+        <div class="credit"><a href="https://www.youtube.com/watch?v=r6WOFBdpKdQ" target="_blank" rel="noreferrer">成田机场到浅草 Access 特快</a><br>老大と小跟班</div>
+        <div class="credit"><a href="https://www.youtube.com/watch?v=RbpluLpcMe4" target="_blank" rel="noreferrer">T1 北翼国际到达→京成线</a><br>旅人ひつじの乗換・道案内</div>
+        <div class="credit"><a href="https://www.youtube.com/watch?v=8fPaevONz-o" target="_blank" rel="noreferrer">T1 全景与车站入口</a><br>Walking the World 4K</div>
+        <div class="credit"><a href="https://www.youtube.com/watch?v=MShzgtF_kRM" target="_blank" rel="noreferrer">京成 Access 特快搭车教学</a><br>來一球叭噗</div>
+        <div class="credit"><a href="https://www.youtube.com/watch?v=7DtwK7-JCHM" target="_blank" rel="noreferrer">成田 Sky Access Line 前面展望</a><br>eENAGA</div>
+        <div class="credit"><a href="https://www.youtube.com/watch?v=58n0Zdk6ZyA" target="_blank" rel="noreferrer">成田机场第一航站楼电梯全集</a><br>madoshi E.T｜步骤3、4、10截图来源</div>
+        <div class="credit"><a href="https://www.youtube.com/watch?v=HxGdkxa7Rwo" target="_blank" rel="noreferrer">日本桥无楼梯换乘</a><br>CORO2GO｜步骤14–15截图来源</div>
+        <div class="credit"><a href="https://www.youtube.com/watch?v=gKeHms_rWnc" target="_blank" rel="noreferrer">日本桥浅草线换乘东西线</a><br>Traveler Sheep｜步骤16–17清晰截图来源</div>
+        <div class="credit"><a href="https://www.youtube.com/watch?v=SlK7sadQc40" target="_blank" rel="noreferrer">高田马场东西线到站电梯</a><br>步骤18、19截图来源；看到电梯即乘坐，不跟视频走扶梯</div>
+        <div class="credit"><a href="https://www.youtube.com/watch?v=EGKMFWf7DOY" target="_blank" rel="noreferrer">东西线站台第一部电梯</a><br>步骤20：地下二层B2按B1到闸机层</div>
+        <div class="credit"><a href="https://www.youtube.com/watch?v=BnJI0MD121o" target="_blank" rel="noreferrer">高田马场第二部电梯</a><br>步骤20：地下一层B1到地面一层1F</div>
+        <div class="credit"><a href="https://www.youtube.com/watch?v=jzCW8fpU0L4" target="_blank" rel="noreferrer">地面前往BIGBOX</a><br>步骤21：左转、过短横道、再左转</div>
+        <div class="credit"><a href="https://www.youtube.com/watch?v=HJi8fFHxt6E" target="_blank" rel="noreferrer">西武BIGBOX入口电梯</a><br>步骤22正向连续截图来源</div>
+        <div class="credit"><a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noreferrer">CC BY-SA 4.0</a> / <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noreferrer">CC BY 4.0</a><br>开放照片均裁切为网页尺寸，作者与来源见图下注明</div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      本页是从成田T1入境后到新井药师前南口的独立完整攻略，按行程分成25步。资料核对日期：2026-08-10。直通列车的车厢编号、电梯点检、号线安排及新井药师前施工通道可能临时改变；出发当天以电梯图标、电子屏上的列车种类、发车时间、终点与“各停”，以及站员指示为准。
+    </footer>
+  </div>
+  <script>
+    document.querySelectorAll('body.large-text .visual > .tag').forEach(function (tag) {
+      const visual = tag.parentElement;
+      tag.classList.add('large-caption');
+      visual.insertAdjacentElement('afterend', tag);
+    });
+
+    function copyAiPrompt() {
+      const prompt = document.getElementById('arrival-ai-prompt');
+      const status = document.getElementById('copy-status');
+      prompt.focus();
+      prompt.select();
+      prompt.setSelectionRange(0, prompt.value.length);
+      const copied = function () { status.textContent = '已复制，可切换到 AI 粘贴。'; };
+      const fallback = function () {
+        if (document.execCommand('copy')) { copied(); }
+        else { status.textContent = '请长按上面的文字复制。'; }
+      };
+      if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(prompt.value).then(copied).catch(fallback);
+      } else {
+        fallback();
+      }
+    }
+  </script>
+</body>
+</html>
